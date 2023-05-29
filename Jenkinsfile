@@ -7,11 +7,8 @@ pipeline {
 	stages {
 		stage("build"){
 			steps{
-				script{
-					msg = "hello jenkins"
-					mytools.PrintMsg(msg)
-				}
 			}
 		}
 	}
 }
+
