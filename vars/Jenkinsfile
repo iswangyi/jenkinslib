@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+    environment {
+        // Define environment variables here
+        // Example: FOO = 'bar'
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout source code from Git
+                // Example: git branch: 'master', url: 'https://github.com/my-org/my-repo.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                // Build the project
+                // Example: sh "mvn clean install"
+            }
+        }
+        stage('Test') {
+            steps {
+                // Run tests
+                // Example: sh "mvn test"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Deploy the project
+                // Example: sh "mvn deploy"
+            }
+        }
+    }
+    post {
+        always {
+            // Clean up workspace
+            // Example: sh "rm -rf *"
+        }
+        success {
+            // Send notification on success
+            // Example: sh "echo 'Build succeeded!'"
+        }
+        failure {
+            // Send notification on failure
+            // Example: sh "echo 'Build failed!'"
+        }
+    }
+}
