@@ -4,6 +4,9 @@ pipeline {
         // Define environment variables here
         // Example: FOO = 'bar'
     }
+    parameters {
+        string(name: 'SERVICE_NAME', defaultValue: 'zinks', description: 'Name of the service to build and deploy')
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -45,3 +48,4 @@ pipeline {
         }
     }
 }
+
